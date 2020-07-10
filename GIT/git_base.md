@@ -36,3 +36,11 @@ Other
     git fetch --all
     git push origin writable:master
     git push --set-upstream origin writable
+    git push origin <branchname>
+    # New branch
+    git checkout -b <branchname>
+    # Switch branch
+    git checkout <branchname>
+    # List branch
+    git branch
+    git add -A
