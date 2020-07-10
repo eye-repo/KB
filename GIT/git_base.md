@@ -43,4 +43,5 @@ Other
     git checkout <branchname>
     # List branch
     git branch
+    # Add all changes
     git add -A
