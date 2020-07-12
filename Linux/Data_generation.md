@@ -1,4 +1,8 @@
-**Create files**
+# Generate data
+
+## Files
+
+### Create files
 
     # Generate 1M file filled with zeros
     dd if=/dev/zero of=/tmp/out.file bs=1024 count=1024
@@ -20,9 +24,11 @@
     
     # # Generate 10M file filled with random data
     dd if=/dev/urandom of=/tmp/out.file bs=10M count=1
-    
-**Generate numbers and string with numbers**
-    
+
+## Numbers
+
+### Generate numbers and string with numbers
+
     # Generate numbers from 0 to 100
     for COUNTER in {1..100}; do echo $COUNTER ; done
     COUNTER=0; while [[ COUNTER -lt 100 ]]; do COUNTER=$((COUNTER+1)); echo $COUNTER; done
@@ -34,5 +40,3 @@
     # Generate string with numbers from 0 to 100 with leading zeros
     VBASE=var_;for COUNTER in {1..100}; do printf "$VBASE%08d\n" $COUNTER ; done
     VBASE=var_;COUNTER=0; while [[ COUNTER -lt 100 ]]; do COUNTER=$((COUNTER+1)); printf "$VBASE%08d\n" $COUNTER; done
-
-    
