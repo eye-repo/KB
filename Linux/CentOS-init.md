@@ -61,8 +61,10 @@
       echo "enabled=1" >> /etc/yum.repos.d/dvd.repo
       echo "baseurl=file:///mnt/disc/" >> /etc/yum.repos.d/dvd.repo
       echo "gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release" >> /etc/yum.repos.d/dvd.repo
-      # or paste in editor:
-      vi /etc/yum.repos.d/dvd.repo
+
+      # or use editor:
+      vim /etc/yum.repos.d/dvd.repo
+
       enabled=1
       baseurl=file:///mnt/disc/
       gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
@@ -72,7 +74,7 @@
       cat /etc/yum.repos.d/dvd.repo
       [DVD Repo]
       name=DVD Repo
-      mediaid=1359576196.686790
+      mediaid=123456780.654321
       metadata_expire=-1
       gpgcheck=1
       cost=500
