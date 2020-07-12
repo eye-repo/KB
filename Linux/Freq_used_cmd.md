@@ -37,6 +37,20 @@
 
       echo ${var:2: -4}
 
+- Remove leading\trailing\all whitespace from a string:
+
+      echo ${text##+([[:space:]])}
+      echo ${text%%+([[:space:]])}
+      echo ${text//[[:space:]]}
+
+  Repace `[[:space:]]` to remove other chracters. Enabling extglob can be useful. If set (should be as default), the extended pattern matching features are enabled.
+
+      shopt -s extglob
+      BVAR="ABC123xyz"
+      echo ${BVAR##*1}  # 23xyz
+      echo ${BVAR%%3*}  # ABC12
+      echo ${BVAR//1*3} # ABCxyz
+
 ### Copy with date
 
 - Date format: 20200202010101
