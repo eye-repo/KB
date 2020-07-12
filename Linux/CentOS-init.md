@@ -82,7 +82,7 @@
       baseurl=file:///mnt/disc/
       gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
 
-    Check repo
+    Check repo with `yum`
 
       yum clean all
       yum repolist enabled
