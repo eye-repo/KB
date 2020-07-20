@@ -43,7 +43,7 @@
       echo ${text%%+([[:space:]])}
       echo ${text//[[:space:]]}
 
-  Repace `[[:space:]]` to remove other chracters. Enabling extglob can be useful. If set (should be as default), the extended pattern matching features are enabled.
+  Replace `[[:space:]]` to remove other chracters. Enabling extglob can be useful. If set (should be as default), the extended pattern matching features are enabled.
 
       shopt -s extglob
       BVAR="ABC123xyz"
@@ -100,7 +100,8 @@
 ### Simple loops
 
     for i in {1..3} ; do echo $i; done
-    while [ 1==1 ]; do echo 1; done
+    while true; do echo 1; done
+	while [ 1==1 ]; do echo 1; done
     while read line ; do echo $line ; done <file
     while read line ; do echo $line ; done < <(cat file)
     cat file | while read line ; do echo $line ; done
