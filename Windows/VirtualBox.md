@@ -8,12 +8,14 @@
   `Right click` -> `New` -> `Shortcut`
 + Set **Type the location of the item** to
 `"C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" startvm "vmname" --type headless`
+
   <font size="1">Adjust path to **VBoxManage.exe** if needed</font>
 + Set shortcut name
 
 ## Shutdown all VMs
 
 Create simple batch script:
+
 <font size="1">Adjust path to **VBoxManage.exe** if needed</font>
 ```batch
 @ECHO OFF
