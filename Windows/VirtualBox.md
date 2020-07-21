@@ -1,6 +1,6 @@
 # VirtualBox
 
-## Start guest on os standard.
+## Start guest on os standard
 
 + Open directory
 `C:\Users\[user]\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup`
@@ -8,15 +8,13 @@
   `Right click` -> `New` -> `Shortcut`
 + Set **Type the location of the item** to
 `"C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" startvm "vmname" --type headless`
-
-  <font size="1">Adjust path to **VBoxManage.exe** if needed</font>
+  _Adjust path to **VBoxManage.exe** if needed_
 + Set shortcut name
 
 ## Shutdown all VMs
 
 Create simple batch script:
-
-<font size="1">Adjust path to **VBoxManage.exe** if needed</font>
+_Adjust path to **VBoxManage.exe** if needed_
 ```batch
 @ECHO OFF
 
