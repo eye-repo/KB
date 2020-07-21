@@ -101,7 +101,7 @@
 
     for i in {1..3} ; do echo $i; done
     while true; do echo 1; done
-	while [ 1==1 ]; do echo 1; done
+    while [ 1==1 ]; do echo 1; done
     while read line ; do echo $line ; done <file
     while read line ; do echo $line ; done < <(cat file)
     cat file | while read line ; do echo $line ; done
