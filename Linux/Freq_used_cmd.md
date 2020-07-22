@@ -152,7 +152,33 @@ Search files in multiple archives and print them
 
     ls *.tgz | while read tf; do tar -tf ${tf} '*file' 2>/dev/null ; done
     ls *.tgz | while read tf; do echo ${tf}; tar -tf ${tf} '*file' 2>/dev/null ; done
-
+    # Print content of the searched files
     ls *.tgz | while read tf; do tar -tf ${tf} '*file' 2>/dev/null | xargs -r -L1 tar -axf ${tf} -O ; done
-    
     find . -name "*.tgz" | while read tf; do echo $tf ;tar -tf ${tf} '*file' 2>/dev/null | xargs -r -L1 tar -axf ${tf} -O | grep foo; done
+
+### xargs & seq
+
+Basic
+
+    seq -s' ' 10 | xargs -n1
+    seq -s' ' 10 | xargs -n2
+    seq -f "A %G" 10 | xargs -n3 echo
+    seq -f "A %02G" 10 | xargs -L1 echo
+    seq -f "A %02G" 10 | xargs -L2 echo
+
+Skip empty value
+
+    for i in {1..3} ; do [[ $i -eq 2 ]] && unset i; echo $i | xargs echo; done
+    for i in {1..3} ; do [[ $i -eq 2 ]] && unset i; echo $i | xargs -r echo; done
+
+Assigne to 'variable'
+
+    seq  10 | xargs -I {} echo Test {}
+    seq  10 | xargs -I getval echo grep getval file
+    seq -f "A %G" 10| xargs -I val echo val:val
+    seq -f "A %G" 10| xargs -I val echo VAL:val
+
+Read two values in one line
+
+    seq 10 | xargs printf 'First %s, Next %s\n'
+    seq 10 | xargs -n2 printf 'First %s, Next %s\n'
