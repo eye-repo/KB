@@ -138,7 +138,7 @@ In loop
 
 ### tar
 
-List command
+List files
 
     tar -tvf file.tar
     tar -ztvf file.tar.gz
