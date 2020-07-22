@@ -47,31 +47,31 @@ Replace `[[:space:]]` to remove other chracters. Enabling extglob can be useful.
 
 ### Copy with date
 
-- Date format: 20200202010101
+Date format: 20200202010101
 
-      $(date +%Y%m%d%H%M%S)
-      $(date +%Y%m%d%H%M%S).bak
-      cp file file.$(date +%Y%m%d%H%M%S).bak
+    $(date +%Y%m%d%H%M%S)
+    $(date +%Y%m%d%H%M%S).bak
+    cp file file.$(date +%Y%m%d%H%M%S).bak
 
-- Date format: 20200202-010101
+Date format: 20200202-010101
 
-      $(date +%Y%m%d-%H%M%S)
-      $(date +%Y%m%d-%H%M%S).bak
-      cp file file.$(date +%Y%m%d-%H%M%S).bak
+    $(date +%Y%m%d-%H%M%S)
+    $(date +%Y%m%d-%H%M%S).bak
+    cp file file.$(date +%Y%m%d-%H%M%S).bak
 
 ### Calculation
 
-- Adding two variables
+Adding two variables
 
-      c=$((a + b))
-      c=$(($a + $b))
-      c=`expr $a + $b`
-      c=$(expr $a + $b)
+    c=$((a + b))
+    c=$(($a + $b))
+    c=`expr $a + $b`
+    c=$(expr $a + $b)
 
-- Increase\Decrease number
+Increase\Decrease number
 
-      ((i=i+1))
-      ((i=i-1))
+    ((i=i+1))
+    ((i=i-1))
 
 ### Lowercase, Uppercase
   
