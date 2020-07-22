@@ -13,25 +13,25 @@
 
 ### Display string variables in bash
 
-UPPERCASE & lowercase
+UPPERCASE & lowercase  
 `echo ${var^^} ${var,,}`
 
-String length
+String length  
 `echo ${#var}`
 
-Print string from second character
+Print string from second character  
 `echo ${var:1}`
 
-Print firts three characters (3 chars starting from 0)
+Print firts three characters (3 chars starting from 0)  
 `echo ${var:0:3}`
 
-Print last four characters
+Print last four characters  
 `echo ${var: -4}`
 
-Print from third character and skipping last four characters
+Print from third character and skipping last four characters  
 `echo ${var:2: -4}`
 
-Remove leading\trailing\all whitespace from a string:
+Remove leading\trailing\all whitespace from a string
 
       echo ${text##+([[:space:]])}
       echo ${text%%+([[:space:]])}
