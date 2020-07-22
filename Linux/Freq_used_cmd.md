@@ -1,6 +1,6 @@
 # Frequently used commands
 
-## 
+## bash
 
 ### Set PS1
 
@@ -13,37 +13,31 @@
 
 ### Display string variables in bash
 
-- UPPERCASE & lowercase
+UPPERCASE & lowercase
+`echo ${var^^} ${var,,}`
 
-      echo ${var^^} ${var,,}
-  
-- String length
+String length
+`echo ${#var}`
 
-      echo ${#var}
-  
-- Print string from second character
+Print string from second character
+`echo ${var:1}`
 
-      echo ${var:1}
+Print firts three characters (3 chars starting from 0)
+`echo ${var:0:3}`
 
-- Print firts three characters (3 chars starting from 0)
+Print last four characters
+`echo ${var: -4}`
 
-      echo ${var:0:3}
+Print from third character and skipping last four characters
+`echo ${var:2: -4}`
 
-- Print last four characters
-
-      echo ${var: -4}
-
-- Print from third character and skipping last four characters
-
-      echo ${var:2: -4}
-
-- Remove leading\trailing\all whitespace from a string:
+Remove leading\trailing\all whitespace from a string:
 
       echo ${text##+([[:space:]])}
       echo ${text%%+([[:space:]])}
       echo ${text//[[:space:]]}
 
-  Replace `[[:space:]]` to remove other chracters. Enabling extglob can be useful. If set (should be as default), the extended pattern matching features are enabled.
+Replace `[[:space:]]` to remove other chracters. Enabling extglob can be useful. If set (should be as default), the extended pattern matching features are enabled.
 
       shopt -s extglob
       BVAR="ABC123xyz"
@@ -81,21 +75,21 @@
 
 ### Lowercase, Uppercase
   
-- Tu Uppercase
+Tu Uppercase
 
-      echo ${var^^} 
-      echo $var | tr '[:lower:]' '[:upper:]'
-      echo $var | awk '{print toupper($0)}'
-      echo $var | sed -e 's/\(.*\)/\U\1/'
-      echo $var | sed 's/.*/\U&/'
+    echo ${var^^} 
+    echo $var | tr '[:lower:]' '[:upper:]'
+    echo $var | awk '{print toupper($0)}'
+    echo $var | sed -e 's/\(.*\)/\U\1/'
+    echo $var | sed 's/.*/\U&/'
 
-- To Lowercase
+To Lowercase
 
-      echo ${var,,}
-      echo $var | tr '[:upper:]' '[:lower:]'
-      echo $var | awk '{print tolower($0)}'
-      echo $var | sed -e 's/\(.*\)/\L\1/'
-      echo $var | sed 's/.*/\L&/'
+    echo ${var,,}
+    echo $var | tr '[:upper:]' '[:lower:]'
+    echo $var | awk '{print tolower($0)}'
+    echo $var | sed -e 's/\(.*\)/\L\1/'
+    echo $var | sed 's/.*/\L&/'
 
 ### Simple loops
 
@@ -128,3 +122,28 @@
 
       &> /dev/null
       > /dev/null 2>&1`
+
+## Tools
+
+### sshpass
+
+Single command
+
+    sshpass -f file.txt ssh -oStrictHostKeyChecking=no -oConnectTimeout=5 user@$host 'ls -la /etc/hosts'
+
+In loop
+
+    for h in localhost ; do echo $h; sshpass -f file.txt ssh -oStrictHostKeyChecking=no -oConnectTimeout=5 user@${h} 'ls -la /etc/hosts' 2>/dev/null; done
+    for h in localhost ; do echo $h; sshpass -f file.txt scp -oStrictHostKeyChecking=no -oConnectTimeout=5 src_file.txt user@${h}:/tmp/ ; done
+
+### tar
+
+List command
+
+    tar -tvf file.tar
+    tar -ztvf file.tar.gz
+    tar -tvf projects.tar.bz2 '*.pl'
+
+Read file
+
+    tar -axf file.tgz foo/bar -O
