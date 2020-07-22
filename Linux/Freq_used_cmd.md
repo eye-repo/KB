@@ -59,6 +59,10 @@ Date format: 20200202-010101
     $(date +%Y%m%d-%H%M%S).bak
     cp file file.$(date +%Y%m%d-%H%M%S).bak
 
+Date format: 2020-02-02 01:01:01
+
+    $(date +'%Y-%m-%d %H:%M:%S')
+
 ### Calculation
 
 Adding two variables
@@ -102,26 +106,42 @@ To Lowercase
 
 ### Timestamps
 
-- Change timestamp in audit.log
+Change timestamp in audit.log
 
-      cat /var/log/audit/audit.log | awk '{print strftime ("%F %T",substr($2,11,10))" "$0}'
+    cat /var/log/audit/audit.log | awk '{print strftime ("%F %T",substr($2,11,10))" "$0}'
 
-- Change timestamp to human readable form
+Change timestamp in .bash_history
+
+    cat .bash_history | awk '{ if (substr($1,1,1) == "#" && length($1) == 11 ) {print $1, strftime("%F %T",substr($1,2,10))} else {print} }'
+
+Change timestamp to human readable form
 
       date -d @1477401122
 
-- Get date in line
+Get date in line
 
-      CDATE=$(date +%Y-%m-%d_%H:%M:%S) ; ps auxf | awk -v cDate=$CDATE '{print cDate, $0}'
-      CDATE=$(date +%Y-%m-%d_%H:%M:%S) ; ps auxf | awk -v cDate=$CDATE '{print cDate" "$0}'
-      ps auxf | awk '{print strftime("%Y-%m-%d %H:%M:%S")" "$0}'
+    CDATE=$(date +%Y-%m-%d_%H:%M:%S) ; ps auxf | awk -v cDate=$CDATE '{print cDate, $0}'
+    CDATE=$(date +%Y-%m-%d_%H:%M:%S) ; ps auxf | awk -v cDate=$CDATE '{print cDate" "$0}'
+    ps auxf | awk '{print strftime("%Y-%m-%d %H:%M:%S")" "$0}'
 
 ### Redirect outputs
 
-- All to /dev/null
+All to /dev/null
 
-      &> /dev/null
-      > /dev/null 2>&1`
+    &> /dev/null
+    > /dev/null 2>&1`
+
+Print as error
+
+    echo 'ERROR' >/dev/stderr
+    # Function
+    lerr(){
+        echo "ERROR: $@" >>/dev/stderr
+    }
+    # or
+    lerr(){
+        echo "$(date +'%Y-%m-%d %H:%M:%S') ERROR: $@" >>/dev/stderr
+    }
 
 ## Tools
 
@@ -182,3 +202,10 @@ Read two values in one line
 
     seq 10 | xargs printf 'First %s, Next %s\n'
     seq 10 | xargs -n2 printf 'First %s, Next %s\n'
+
+### nmap
+
+Check SSL
+
+    nmap --script ssl-cert -p 443 jumpnowtek.com
+    nmap --script ssl-enum-ciphers -p 443 jumpnowtek.com
