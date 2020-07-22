@@ -147,3 +147,8 @@ List files
 Read file
 
     tar -axf file.tgz foo/bar -O
+
+Search files in multiple archives
+
+    ls *.tgz | while read tf; do echo ${tf}; tar -axf ${tf}  $(tar -tf ${tf} '*READ*' 2>/dev/null) -O ; done
+    find . -name *.tgz | while read tf; do echo $tf; tar -axf $tf  $(tar -tf $tf '*READ*' 2>/dev/null) -O | grep foo; done
