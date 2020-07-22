@@ -171,7 +171,7 @@ Skip empty value
     for i in {1..3} ; do [[ $i -eq 2 ]] && unset i; echo $i | xargs echo; done
     for i in {1..3} ; do [[ $i -eq 2 ]] && unset i; echo $i | xargs -r echo; done
 
-Assigne to 'variable'
+Assigne to variable
 
     seq  10 | xargs -I {} echo Test {}
     seq  10 | xargs -I getval echo grep getval file
