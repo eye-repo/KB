@@ -95,6 +95,6 @@ Skipping first element with loop
 `,[^,]\+` matches `,` followed by any number of characters except `,` and the match is replaced with empty string
 
     # Remove everything after last ','
-    sed 's/,[^,]\+$//' file.csv 
-    # Remove everything after last '.' (eg extension)
+    sed 's/,[^,]\+$//' file.csv
+    # Remove everything after last '.' (extension)
     ls  -1 | sed -e 's/\.[^.]*$//'
