@@ -75,7 +75,3 @@ Format with zeros
 Begin an extended self-test of drive `/dev/hdc`. You can issue this command on a running system. The results can be seen in the self-test log visible with the `-l selftest` option after it has completed. 
 
     smartctl -t long /dev/sdb
-
-
-
-
