@@ -2,6 +2,11 @@
 
 ## bash
 
+### SSH KeyGen
+ 
+    ssh-keygen -t ed25519
+    ssh-keygen -t rsa -b 4096
+
 ### Set PS1
 
     PS1="[\u@\h \W ]# "
