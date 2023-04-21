@@ -12,6 +12,7 @@ Simple:
 
 JSON
 
+    import json
     jdata = {
         "1": ["a", "b"],
         "2": "c" 
