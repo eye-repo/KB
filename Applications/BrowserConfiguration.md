@@ -23,6 +23,11 @@ javascript:(function(){
  })(); 
 ```
 
+Oneliner
+```
+javascript:(function(){document.body.style.background='black';document.body.style.color='white';alert("Hello! I am an alert box!");})();
+```
+
 Get images from site
 ```
 javascript:(function(){
