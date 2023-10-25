@@ -6,6 +6,12 @@
 
 ## Generic
 
+1. Install chrome extention: [Custom JavaScript for Websites 2](https://chrome.google.com/webstore/detail/custom-javascript-for-web/ddbjnfjiigjmcpcpkmhogomapikjbjdk) 
+2. Go to [youtube.com](youtube.com)
+3. Open extention and enter:
+
+    $('.ytd-popup-container').hide()
+
 ### Bookmarklets
 
 Dark mode
@@ -49,3 +55,4 @@ javascript:(function(){
 ```
 
 Based on [sekurak](https://sekurak.pl/skryptozakladki-bookmarklets-jak-z-zakladki-w-przegladarce-zrobic-narzedzie-do-osintu-osint-hints/)
+
