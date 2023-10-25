@@ -8,8 +8,9 @@
 2. Go to [youtube.com](youtube.com)
 3. Open extention and enter:
 
-    $('.ytd-popup-container').hide()
-
+   ```
+   $('.ytd-popup-container').hide()
+   ```
 
 ## Generic
 
