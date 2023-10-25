@@ -4,13 +4,14 @@
 
 ## Chrome
 
-## Generic
-
 1. Install chrome extention: [Custom JavaScript for Websites 2](https://chrome.google.com/webstore/detail/custom-javascript-for-web/ddbjnfjiigjmcpcpkmhogomapikjbjdk) 
 2. Go to [youtube.com](youtube.com)
 3. Open extention and enter:
 
     $('.ytd-popup-container').hide()
+
+
+## Generic
 
 ### Bookmarklets
 
