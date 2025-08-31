@@ -2,6 +2,9 @@
 
 ## Firefox
 
+```
+browser.ml.chat.enabled - Enable\Disable AI features
+```
 ## Chrome
 
 ## Generic
